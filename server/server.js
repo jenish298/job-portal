@@ -18,7 +18,7 @@ import { clerkWbhooks } from './controllers/webhooks.js';
   app.use(express.json())
 
   //routes
-  app.get('/',(req,res)=> res.send("api is working hello"))
+  app.get('/',(req,res)=> res.send("api is working jenish"))
   app.get("/debug-sentry", function mainHandler(req, res) {
   throw new Error("My first Sentry error!");
 });
