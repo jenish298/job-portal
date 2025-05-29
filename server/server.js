@@ -4,7 +4,7 @@ import cors from 'cors';
 import 'dotenv/config';
 import connectDB from './config/db.js'
 import * as Sentry from "@sentry/node"
-import { clearkWebhooks } from './controllers/webhooks.js';
+import { clerkWbhooks } from './controllers/webhooks.js';
 
   //initiallize express
   const app = express();
@@ -23,7 +23,7 @@ import { clearkWebhooks } from './controllers/webhooks.js';
   throw new Error("My first Sentry error!");
 });
 
-app.post('/webhooks',clearkWebhooks)
+app.post('/webhooks',clerkWbhooks)
 
 
   //port
