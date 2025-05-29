@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Lugrasimo&family=Outfit:wght@100..900&family=Sevillana&display=swap');
+@import "tailwindcss";
+
+
+*{
+    font-family: outfit;
+}
+
+@layer base {
+    html{
+        scroll-behavior: smooth;
+    }
+}
+/* Global Styles */
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+/* Headings */
+.rich-text h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.rich-text h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+.rich-text h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+.rich-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    color: gray;
+}
+.rich-text b,
+.rich-text strong {
+    font-weight: bold;
+}
+.rich-text i,
+.rich-text em {
+    font-style: italic;
+}
+.rich-text ol {
+    list-style-type: decimal;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+.rich-text ul {
+    list-style-type: disc;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+.rich-text li {
+    margin-bottom: 0.5rem;
+    color: gray;
+}
+.rich-text blockquote {
+    border-left: 4px solid #ccc;
+    padding-left: 1rem;
+    color: #555;
+    margin: 1rem 0;
+    font-style: italic;
+}
+.rich-text code {
+    background: #f4f4f4;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.95em;
+}
