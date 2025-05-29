@@ -1,6 +1,7 @@
 import { Webhook } from "svix";
 import User from "../models/user.js";
 
+
 export const clerkWbhooks = async (req,res)=>{
   try {
     //create a svix intance with clerk webhook secret.
@@ -19,7 +20,7 @@ export const clerkWbhooks = async (req,res)=>{
       case 'user.created':{
         const userData = {
           _id:data.id,
-          email:data.email_addresses[0].email_addresses,
+          email:data.email_addresses[0].email_address,
           name:data.first_name+" "+data.last_name,
           image: data.image_url,
           resume:""
@@ -30,7 +31,7 @@ export const clerkWbhooks = async (req,res)=>{
       }
       case 'user.updated':{
          const userData = {
-          email:data.email_addresses[0].email_addresses,
+          email:data.email_addresses[0].email_address,
           name:data.first_name+" "+data.last_name,
           image: data.image_url
         }
@@ -43,9 +44,9 @@ export const clerkWbhooks = async (req,res)=>{
         res.json({})
         break;
       }  
-      default:{
+      default:
 
-      break;}   
+      break; 
     }
   } catch (error) {
     console.log(error.message);
