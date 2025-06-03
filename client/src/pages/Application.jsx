@@ -91,7 +91,7 @@ useEffect(()=>{
           ) : (
             <div className="flex gap-2">
               <a
-                className="bg-blue-100 text-blue-600 px-4 py-2 rounded-lg"
+                className="bg-blue-100 text-blue-600 px-4 py-2 rounded-lg" target="_blank"
                 href={userData?.resume || "#"}
               >
                 
