@@ -1,9 +1,9 @@
-// Import with import * as Sentry from "@sentry/node" if you are using ESM
+// Import with `import * as Sentry from "@sentry/node"` if you are using ESM
 import * as Sentry from "@sentry/node"
 import { nodeProfilingIntegration } from "@sentry/profiling-node"
 
 Sentry.init({
-  dsn: "https://68d49c63d7c8fea9e78f8082875f4b9d@o4509399152197632.ingest.us.sentry.io/4509400362254337",
+  dsn: "https://930403d83fa5ff47f32d17b0f195b458@o4509399152328704.ingest.us.sentry.io/4509399202267136",
   integrations: [
     nodeProfilingIntegration(),
     Sentry.mongooseIntegration()
@@ -21,7 +21,7 @@ Sentry.init({
 });
 Sentry.profiler.startProfiler();
 
-// Profiling happens automatically after setting it up with Sentry.init().
+// Profiling happens automatically after setting it up with `Sentry.init()`.
 // All spans (unless those discarded by sampling) will have profiling data attached to them.
 Sentry.startSpan({
   name: "My Span",

@@ -1,6 +1,5 @@
 import { Webhook } from "svix";
-import User from "../models/user.js";
-
+import User from "../models/User.js";
 
 export const clerkWbhooks = async (req,res)=>{
   try {
@@ -44,9 +43,9 @@ export const clerkWbhooks = async (req,res)=>{
         res.json({})
         break;
       }  
-      default:
+      default:{
 
-      break; 
+      break;}   
     }
   } catch (error) {
     console.log(error.message);

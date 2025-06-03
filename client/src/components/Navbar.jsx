@@ -18,8 +18,7 @@ const Navbar = () => {
             {
               user ?
               <div className='flex item-center gap-3' style={{marginRight: '30px'}}>
-                <Link to={'/'}> Home </Link>
-                <p> | </p>
+              
                 <Link to={'/application'}> Applied Job </Link>
                 <p> | </p>
                 <p className='max-sm:hidden'> Hii, {user.firstName +" "+ user.lastName} </p>
@@ -29,9 +28,9 @@ const Navbar = () => {
 
               </div> :
               <div className='flex items-center gap-4' style={{marginRight: '30px'}}>
-                <Link to={'/'}> Home </Link>
+               <button onClick={e=>setShowRecruiterLogin(true)} className='text-gray-600 '>Recruiter Login</button>
                 <p> | </p>
-                <button onClick={e=>setShowRecruiterLogin(true)} className='text-gray-600 '>Recruiter Login</button>
+                
                 <button onClick={ e => openSignIn()} className='bg-blue-600 text-white px-6 sm:px-9 py-2 rounded-full'>Login</button>
             </div>
             }
