@@ -6,7 +6,7 @@ import { v2 as cloudinary } from "cloudinary";
 
 // get user data
 export const getUserData = async (req, res) => {
-  const {userId} = await req.auth();
+  const userId = await req.auth().userId;
 
   try {
     const user = await User.findById(userId);
@@ -32,7 +32,7 @@ export const getUserData = async (req, res) => {
 //apply for a job
 export const applyForJob = async (req, res) => {
   const { jobId } = req.body;
-  const {userId} = await req.auth();
+  const userId = await req.auth().userId;
 
   try {
     const isAlreadyApplied = await JobApplication.find({ jobId, userId });
@@ -77,7 +77,7 @@ export const getUserJobApplications = async (req, res) => {
 
   try {
       
-    const {userId} = await req.auth();
+    const userId = await req.auth().userId;
 
     const applications = await JobApplication.find({userId})
     .populate("companyId", 'name email image')
@@ -110,7 +110,7 @@ export const updateUserResume = async (req, res) => {
 
   try {
     
-    const {userId} = await req.auth();
+    const userId = await req.auth().userId;
 
     const resumeFile = req.file;
 
