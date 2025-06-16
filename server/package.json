@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
+    "start": "set NODE_OPTIONS=--no-deprecation && node server.js",
     "postinstall": "patch-package"
   },
   "keywords": [],
