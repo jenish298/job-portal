@@ -10,35 +10,44 @@ import { connect } from "mongoose";
 import connectCloudinary from "./config/cloudinary.js";
 import jobRoutes from "./routes/jobRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
-import {clerkMiddleware} from "@clerk/express";
+import { clerkMiddleware } from "@clerk/express";
 
-//initiallize express
-const app = express();
+const startServer = async () => {
+  try {
+    // Initialize express
+    const app = express();
 
-//connect db
-await connectDB();
-await connectCloudinary();
+    // Connect to DB & Cloudinary
+    await connectDB();
+    await connectCloudinary();
 
-//middlewares
-app.use(cors());
-app.use(express.json());
-app.use(clerkMiddleware());
+    // Middlewares
+    app.use(cors());
+    app.use(express.json());
+    app.use(clerkMiddleware());
 
-//routes
-app.get("/", (req, res) => res.send("api is working not working thats"));
-app.get("/debug-sentry", function mainHandler(req, res) {
-  throw new Error("My first Sentry error!");
-});
-app.post('/webhooks',clerkWbhooks)
-app.use("/api/company",companyRoutes)
-app.use("/api/jobs",jobRoutes)
-app.use("/api/users", userRoutes);
+    // Routes
+    app.get("/", (req, res) => res.send("API is working!"));
 
-//port
-const PORT = process.env.PORT || 5000;
+    app.post("/webhooks", clerkWbhooks);
+    app.use("/api/company", companyRoutes);
+    app.use("/api/jobs", jobRoutes);
+    app.use("/api/users", userRoutes);
 
-Sentry.setupExpressErrorHandler(app);
+    // Sentry error handler
+    Sentry.setupExpressErrorHandler(app);
 
-app.listen(PORT, () => {
-  console.log(`server is running port http://localhost:${PORT}`);
-});
+    // Start listening
+    const PORT = process.env.PORT || 5000;
+    app.listen(PORT, () => {
+      console.log(`Server is running at http://localhost:${PORT}`);
+    });
+
+  } catch (err) {
+    console.error("❌ Failed to start server:", err.message);
+    console.error(err);
+  }
+};
+
+// Start the server
+startServer();
