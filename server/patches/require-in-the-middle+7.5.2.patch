@@ -1,0 +1,13 @@
+diff --git a/node_modules/require-in-the-middle/index.js b/node_modules/require-in-the-middle/index.js
+index 11ea82a..24522c4 100644
+--- a/node_modules/require-in-the-middle/index.js
++++ b/node_modules/require-in-the-middle/index.js
+@@ -4,6 +4,8 @@ const path = require('path')
+ const Module = require('module')
+ const debug = require('debug')('require-in-the-middle')
+ const moduleDetailsFromPath = require('module-details-from-path')
++const punycode = require('punycode/');
++
+ 
+ // Using the default export is discouraged, but kept for backward compatibility.
+ // Use this instead:

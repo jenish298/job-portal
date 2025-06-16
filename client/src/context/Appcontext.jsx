@@ -109,11 +109,6 @@ export const AppProvider = ({ children }) => {
         }
     }
 
-
-
-
-
-
     useEffect(() => {
         fetchJobs();
 
