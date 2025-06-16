@@ -12,8 +12,8 @@ import jobRoutes from "./routes/jobRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import { clerkMiddleware } from "@clerk/express";
 
-const startServer = async () => {
-  try {
+
+  
     // Initialize express
     const app = express();
 
@@ -43,11 +43,4 @@ const startServer = async () => {
       console.log(`Server is running at http://localhost:${PORT}`);
     });
 
-  } catch (err) {
-    console.error("❌ Failed to start server:", err.message);
-    console.error(err);
-  }
-};
-
-// Start the server
-startServer();
+ 
