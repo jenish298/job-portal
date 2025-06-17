@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import Loading from '../components/Loading';
-import { AppContext } from '../context/AppContext';
+import { AppContext } from '../context/Appcontext';
 
 const ManageJobs = () => {
 
